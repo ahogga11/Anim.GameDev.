@@ -1,0 +1,80 @@
+float $size = 3;
+
+// Base Sphere
+polySphere -r $size -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+move -r -os -wd 0 $size 0;
+
+// Middle Sphere
+polySphere -r ($size - 1) -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+move -r -os -wd 0 7 0;
+
+// Top Sphere
+polySphere -r 1.25 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+move -r -os -wd 0 9.8 0;
+
+// Rim of Hat
+polyCylinder -r 1 -h 2 -sx 20 -sy 1 -sz 1 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1;
+move -r -os -wd 0 10.497 0;
+rotate -r -os -fo -7.79 0 0;
+scale -r 1 0.12 1;
+
+// Top of Hat
+polyCylinder -r 1 -h 2 -sx 20 -sy 1 -sz 1 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1;
+move -r -os -wd 0 11.465 0;
+rotate -r -os -fo -7.79 0 0;
+scale -r 1 0.95 1;
+
+// Left Eye
+polySphere -r 0.25 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+move -r -os -wd -0.4 9.8 1;
+scale -r -os -wd 0.195 0.195 0.195;
+
+// Right Eye
+polySphere -r 0.25 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+move -r -os -wd 0.4 9.8 1;
+scale -r -os -wd 0.195 0.195 0.195;
+
+// Nose
+polyCone -r 1 -h 2 -sx 20 -sy 1 -sz 0 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1;
+move -r -os -wd 0 9.4 1.62;
+rotate -r -os -fo 7.215356 0 0 ;
+scale -r 1 1.481319 1;
+
+// Left Arm
+polyCylinder -r 1 -h 2 -sx 20 -sy 1 -sz 1 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1;
+move -r -2.6 6.8 0.17;
+rotate -r -os -fo 0 0 -40.762291;
+scale -r 0.07 1.93 0.073;
+
+// Left Hand
+polyCylinder -r 1 -h 2 -sx 20 -sy 1 -sz 1 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1;
+move -r -os -wd -3.2 6.1 0.17;
+rotate -r -os -fo 90 0 0;
+scale -r 0.07 0.865 0.07;
+
+// Right Arm
+polyCylinder -r 1 -h 2 -sx 20 -sy 1 -sz 1 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1;
+move -r 2.6 6.8 0.17;
+rotate -r -os -fo 0 0 40.762291;
+scale -r 0.07 1.93 0.073;
+
+// Right Hand
+polyCylinder -r 1 -h 2 -sx 20 -sy 1 -sz 1 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1;
+move -r -os -wd 3.2 6.1 0.17;
+rotate -r -os -fo -90 0 0;
+scale -r 0.07 0.865 0.07;
+
+// Top Button
+polySphere -r 0.25 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+move -r -os -wd 0.006 8 1.63;
+scale -r -os -wd 0.195 0.195 0.195;
+
+// Middle Button
+polySphere -r 0.25 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+move -r -os -wd 0.006 7.1 1.9;
+scale -r -os -wd 0.195 0.185 0.195;
+
+// Bottom Button
+polySphere -r 0.25 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+move -r -os -wd 0.006 6.2 1.6;
+scale -r -os -wd 0.195 0.195 0.195;
