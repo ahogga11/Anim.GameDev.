@@ -1,0 +1,29 @@
+// Define the name of the emitter you want to control
+string $emitter1 = "emitter1";
+
+// Create a window to hold the button
+if (window -exists particleControlWindow)
+    deleteUI particleControlWindow;
+window -title "Particle Control" particleControlWindow;
+
+// Create a layout for the button
+columnLayout -adjustableColumn true;
+button -label "Turn On Particles" -command ("enableEmitterParticles(\"" + $emitter1 + "\")");
+
+showWindow particleControlWindow;
+
+// Function to enable particle emission for the specified emitter
+global proc enableEmitterParticles(string $emitter1) 
+{
+    if (particle -q -isEmitting $emitter1) 
+    {
+        // The emitter is already emitting particles
+        confirmDialog -title "Particle Control" -message "Particles are already on." -button "OK";
+    } 
+    else 
+    {
+        // Enable particle emission for the emitter
+        particle -e -isEmitting true $emitter1;
+        confirmDialog -title "Particle Control" -message "Particles are now on." -button "OK";
+    }
+}
